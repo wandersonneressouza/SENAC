@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 
-public class Exercici8{
+public class Atv8{
   public static void main (String[] args) {
     /* Converta fahrenheit em celsius */
 
