@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-  public class exercicio9{
+  public class Atv9{
         public static void main (String[] args) {
         /* pergunte o vaoor e a quantidade e imprima o valor */
      
