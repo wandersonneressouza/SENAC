@@ -1,4 +1,4 @@
-package JAVA.LIVRO;
+package JAVA.PROJETOS;
 
 public class Meteoro {
 
