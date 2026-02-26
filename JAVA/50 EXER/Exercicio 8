@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+
+public class Exercici8{
+  public static void main (String[] args) {
+    /* Converta fahrenheit em celsius */
+
+Scanner entrada = new Scanner(System.in);
+  
+  //System.out.printlm("CONVERSOR DE FAHRENHEIT PARA CELSIUS, VAMOS COMECAR !");
+  System.out.print("Digite o valor em fahrenheit: ");
+  
+  int valor = entrada.nextInt(); // valor assume o numero digitado
+  int menos32 = valor - 32;     // valor agora subtrai 30
+  double total = menos32 / 1.8; // apos a subtração, o resultado e dividido por 1.8
+  String resultado = String.format("%.1f", total); // formata o valor em 1 casa apos a virgula
+  
+  System.out.print("O valor em CELSIUS é: " + resultado + "C");
+
+
+  } 
+
+}
+
+/* apor corrigir via GPT, vi que poderia ter usado as variaveis
+tipo DOUBLE no lugar das variaveis INT 
+porem preferi nao corrigir
+*/
