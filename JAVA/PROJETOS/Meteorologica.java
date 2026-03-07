@@ -27,28 +27,58 @@ public class Meteorologica {
 
         //  MEDIA PONDERADA.
 
-            public static double calcularMediaPonderada(){            
-                    
-                    double max = 32.5;
-                    double min = 22.1;
+            // public static double calcularMediaPonderada( double umi1, double umi2, double umi3){            
+                
+            //     double umiTotal = umi1 + umi2 + umi3;
+            //     double max;
+            //     double min;
+            //     double resultado = 0;
+            
 
-                return max * 0.7 + min * 0.3;                    
-            }
+
+            //     //return max * 0.7 + min * 0.3;    
+                
+            //     return resultado
+            // }
+
+        // CALCULO MEDIA SIMPLES,
+
+        public static double umidadeMedia(double umi1, double umi2, double umi3){
+             double media = (umi1 + umi2 + umi3) / 3;
+            
+             return media;
+
+             //return String.format("%d %d", a, c)
+        }
+
+
 
         //  CLASSIFICA CLIMA
+  // Classificação do clima
+    public static String classificarClima(double tempMedia, int umidadeMedia) {
 
-            public static String classificarClima(double temperatura, int umidade){
-            
-               
-                if (temperatura > 30 && umidade > 75) {
-                return "MUITO QUENTE E ÚMIDO";
-            } else if (temperatura >= 20 && temperatura <= 25 && umidade >= 50 && umidade <= 70) {
-                return "CONFORTAVEL";
-            } else {
-                return "FRIO E SECO";
-            }
-                    
-            
+        if (tempMedia > 30 && umidadeMedia > 75) {
+            return "MUITO QUENTE E ÚMIDO";
+        } else if (tempMedia >= 20 && tempMedia <= 25 && umidadeMedia >= 50 && umidadeMedia <= 70) {
+            return "CONFORTAVEL";
+        } else if (tempMedia < 15 && umidadeMedia < 50) {
+            return "FRIO E SECO";
+        } else {
+            return "NORMAL";
+        }
+    }     
+
+
+    // Gerar alertas
+    public static String gerarAlertas( double temperatura, double umidade) {
+        
+        if(temperatura > 30 || umidade > 90){
+            return "VERMELHO";
+        }else if(temperatura > 30 && temperatura < 35 || umidade > 80)
+            return "AMARELO";
+        return "VERDE";
+        }
+        
 
         // AMPLITUDE DE TEMPERATURA
         
@@ -73,15 +103,6 @@ public class Meteorologica {
                     
             }
             
-
-    
-
-            
-
-
-
-
-
     public static void main(String[] args){
 
                     double[][] temperaturas = {
@@ -101,44 +122,50 @@ public class Meteorologica {
                     };
 
 
-                    
-
-        // System.out.println("-----------------------------------------------");
-        // System.out.println(calcularMediaPonderada());                               // retornando a média ponderada das temperaturas
-        // // System.out.println(classificarClima(temperaturas[0][1], umidades[0][2]));   // retornando a classificação do clima
-        // System.out.println("-----------------------------------------------");
-        // System.out.println(calcularMaiorAmplitude(temperaturas));                   // retornando a maior amplitude de temperatura entre as cidades
-
-        
-        // // calcular indice de calor ?
-
-        
-
-
-
-
-
-
-
 System.out.println("-------------------------------------------------------------------------------------------");
 System.err.println(" ---------------------- SISTEMA DE ANALISE METEOROLIGICO INTELIGENTE ----------------------");
 System.out.println("-------------------------------------------------------------------------------------------");
 System.out.println("-------------------------------------ANALISE DETALHADA-------------------------------------");
 System.out.println("CIDADES,    TEMP MAX,    TEMP MIN,    TEMP MED,    UMIDADE,   CLASSIFICAÇÃO,   ALERTA, ");
-System.out.println("Cidade 1,      " + temperaturas[0][0] + ",   " + temperaturas[0][1] + ",   " + "MEDIA" + ",     " + umidades[0][0] + ",     " + umidades[0][1] + ",     "+"ALERTA" );
-System.out.println("Cidade 2,      " + temperaturas[1][0] + ",   " + temperaturas[1][1] + ",   " + "MEDIA" + ",     " + umidades[1][0] + ",     " + umidades[1][1] + ",     "+"ALERTA" );
-System.out.println("Cidade 3,      " + temperaturas[2][0] + ",   " + temperaturas[2][1] + ",   " + "MEDIA" + ",     " + umidades[2][0] + ",     " + umidades[2][1] + ",     "+"ALERTA" );
-System.out.println("Cidade 4,      " + temperaturas[3][0] + ",   " + temperaturas[3][1] + ",   " + "MEDIA" + ",     " + umidades[3][0] + ",     " + umidades[3][1] + ",     "+"ALERTA" );
-System.out.println("Cidade 5,      " + temperaturas[4][0] + ",   " + temperaturas[4][1] + ",   " + "MEDIA" + ",     " + umidades[4][0] + ",     " + umidades[4][1] + ",     "+"ALERTA" );
-System.out.println("-------------------------------------------------------------------------------------------");
+System.out.println("Cidade 1,      " + temperaturas[0][0] + ",      " + temperaturas[0][1] + ",         " + (String.format("%.2f", (temperaturas[0][0] + temperaturas[0][1]) / 2)) + ",     " + String.format("%.2f", umidadeMedia(umidades[0][0], umidades[0][1], umidades[0][2])) + "," + classificarClima((temperaturas[0][0] + temperaturas[0][1]) / 2, (umidades[0][0] + umidades[0][1]) / 2) + ",        "+ gerarAlertas((temperaturas[0][0] + temperaturas[0][1]) / 2, (umidades[0][0] + umidades[0][1]) / 2));
+System.out.println("Cidade 2,      " + temperaturas[1][0] + ",      " + temperaturas[1][1] + ",         " + (String.format("%.2f", (temperaturas[1][0] + temperaturas[1][1]) / 2)) + ",     " + String.format("%.2f", umidadeMedia(umidades[1][0], umidades[1][1], umidades[1][2])) + "," + classificarClima((temperaturas[1][0] + temperaturas[1][1]) / 2, (umidades[1][0] + umidades[1][1]) / 2) + ",        "+ gerarAlertas((temperaturas[1][0] + temperaturas[1][1]) / 2, (umidades[1][0] + umidades[1][1]) / 2));
+System.out.println("Cidade 3,      " + temperaturas[2][0] + ",      " + temperaturas[2][1] + ",         " + (String.format("%.2f", (temperaturas[2][0] + temperaturas[2][1]) / 2)) + ",     " + String.format("%.2f", umidadeMedia(umidades[2][0], umidades[2][1], umidades[2][2])) + "," + classificarClima((temperaturas[2][0] + temperaturas[2][1]) / 2, (umidades[2][0] + umidades[2][1]) / 2) + ",        "+ gerarAlertas((temperaturas[2][0] + temperaturas[2][1]) / 2, (umidades[2][0] + umidades[2][1]) / 2));
+System.out.println("Cidade 4,      " + temperaturas[3][0] + ",      " + temperaturas[3][1] + ",         " + (String.format("%.2f", (temperaturas[3][0] + temperaturas[3][1]) / 2)) + ",     " + String.format("%.2f", umidadeMedia(umidades[3][0], umidades[3][1], umidades[3][2])) + "," + classificarClima((temperaturas[3][0] + temperaturas[3][1]) / 2, (umidades[3][0] + umidades[3][1]) / 2) + ",        "+ gerarAlertas((temperaturas[3][0] + temperaturas[3][1]) / 2, (umidades[3][0] + umidades[3][1]) / 2));
+System.out.println("Cidade 5,      " + temperaturas[4][0] + ",      " + temperaturas[4][1] + ",         " + (String.format("%.2f", (temperaturas[4][0] + temperaturas[4][1]) / 2)) + ",     " + String.format("%.2f", umidadeMedia(umidades[4][0], umidades[4][1], umidades[4][2])) + "," + classificarClima((temperaturas[4][0] + temperaturas[4][1]) / 2, (umidades[4][0] + umidades[4][1]) / 2) + ",        "+ gerarAlertas((temperaturas[4][0] + temperaturas[4][1]) / 2, (umidades[4][0] + umidades[4][1]) / 2));
 
                
+System.out.println("Cidade 1,      " + temperaturas[0][0] + ",      " + temperaturas[0][1] + ",         " + (String.format("%.2f", (temperaturas[0][0] + temperaturas[0][1]) / 2)) + ",     " + umidades[0][0] + ",         " + classificarClima((temperaturas[0][0] + temperaturas[0][1]) / 2, (umidades[0][0] + umidades[0][1]) / 2) + ",                  "+"ALERTA" );
 
+System.err.println(" ------------- RODOU ATE O FIM -------------");   
+System.err.println(" ------------- RODOU ATE O FIM -------------");
+
+System.out.printf("Cidade 5,      %.1f,      %.1f,         %.2f,     %.2f, %s,        %s%n",
+    temperaturas[4][0],
+    temperaturas[4][1],
+    (temperaturas[4][0] + temperaturas[4][1]) / 2,
+    umidadeMedia(umidades[4][0], umidades[4][1], umidades[4][2]),
+    classificarClima((temperaturas[4][0] + temperaturas[4][1]) / 2, (umidades[4][0] + umidades[4][1]) / 2),
+    gerarAlertas((temperaturas[4][0] + temperaturas[4][1]) / 2, (umidades[4][0] + umidades[4][1]) / 2)
+);
+   System.err.println(" ------------- RODOU ATE O FIM -------------");   
+   System.err.println(" ------------- RODOU ATE O FIM -------------");
+
+
+System.out.printf("Cidade 5\t%.1f\t\t%.1f\t\t%.2f\t\t%.2f\t\t%s\t\t%s%n",
+    temperaturas[4][0],
+    temperaturas[4][1],
+    (temperaturas[4][0] + temperaturas[4][1]) / 2,
+    umidadeMedia(umidades[4][0], umidades[4][1], umidades[4][2]),
+    classificarClima((temperaturas[4][0] + temperaturas[4][1]) / 2, (umidades[4][0] + umidades[4][1]) / 2),
+    gerarAlertas((temperaturas[4][0] + temperaturas[4][1]) / 2, (umidades[4][0] + umidades[4][1]) / 2)
+);
 
 
         System.err.println(" ------------- RODOU ATE O FIM -------------");
     }   
     
+
+    //umidadeMedia(umidades[0][0], umidades[0][1], umidades[0][2])
 }
 
 
