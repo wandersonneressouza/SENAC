@@ -2,11 +2,27 @@ package JAVA.PROJETOS;
 
 public class Meteorologica {
 
-// public static double temperaturaMediaGeral(){
-
-// }
 
 
+
+/* quero calcular todas as temperaturas e pegar a media de todas, sendo assim, preciso puxar todas
+    as temperaturas [][] 
+    antes do FOR, criamos uma variavel
+    para percorrer as 5 linhas, e 2 colunas, precisamos criar dois FOR
+*/
+public static double temperaturaMediaGeral(double[][] temperaturas){
+
+   double soma = 0;
+
+    for (int L = 0; L < 5; L++){
+        for (int C = 0; C < 2; C++){
+
+    soma = soma + temperaturas[L][C];
+    
+        }
+    }
+    return soma / 10;
+}
 
 //  MEDIA PONDERADA.
 
@@ -26,13 +42,11 @@ public class Meteorologica {
 
 // CALCULO MEDIA SIMPLES,
 
-        public static double umidadeMedia(double umi1, double umi2, double umi3){
-             double media = (umi1 + umi2 + umi3) / 3;
-            
-             return media;
-
-            
-        }
+    public static double umidadeMedia(double umi1, double umi2, double umi3){
+        double media = (umi1 + umi2 + umi3) / 3;
+    
+        return media;
+    }
 
 
 
@@ -105,6 +119,11 @@ public static void main(String[] args){
     };
 
 
+
+  
+
+
+
 System.out.println("-------------------------------------------------------------------------------------------");
 System.err.println(" ---------------------- SISTEMA DE ANALISE METEOROLIGICO INTELIGENTE ----------------------");
 System.out.println("-------------------------------------------------------------------------------------------");
@@ -118,25 +137,11 @@ System.out.println("Cidade 5,      " + temperaturas[4][0] + ",      " + temperat
 System.out.println("-------------------------------------------------------------------------------------------");
 System.out.println("-------------------------------------ESTATISTICA GERAIS------------------------------------");
 System.out.println("-------------------------------------------------------------------------------------------");
-//System.out.println("TEMPERATURA MEDIA GERAL" + temperaturaMediaGeral());
-
-
-
- /* quero calcular todas as temperaturas e pegar a media de todas, sendo assim, preciso puxar todas
-    as temperaturas [][] 
-    antes do FOR, criamos uma variavel
-    para percorrer as 5 linhas, e 2 colunas, precisamos criar dois FOR
-
-    */
-
-    double soma = 0;
-
-    for (int i = 0; i < 5; i++);
-    for (int j = 0; j < 1; j++);
-
-    soma = soma + temperaturas[i][j];
-
-
+System.out.println("TEMPERATURA MEDIA GERAL: " + temperaturaMediaGeral(temperaturas));
+System.out.println("CIDADE MAIS QUENTE: ");
+System.out.println("CIDADE MAIS FRIA: ");
+System.out.println("MAIOR AMPLITUDE: ");
+System.out.println("INDICE DE CALOR MAIS ALTO: ");
 
 
 
