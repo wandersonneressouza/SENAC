@@ -25,20 +25,43 @@ public static double temperaturaMediaGeral(double[][] temperaturas){
 }
 
 //  MEDIA PONDERADA.
-
-// public static double calcularMediaPonderada( double umi1, double umi2, double umi3){            
-
+// public static double calcularMediaPonderada( double umi1, double umi2, double umi3){ 
 //     double umiTotal = umi1 + umi2 + umi3;
 //     double max;
 //     double min;
 //     double resultado = 0;
-
-
-
 //     //return max * 0.7 + min * 0.3;    
 
 //     return resultado
 // }
+
+
+// CIDADES MAIS QUENTE..
+/* PARA ISSO , PRECISO PERCORRER A TABELA DE TEMPERATURA, E PUXAR SOMENTE A MAIOR
+PARA ISSO, VAMOS DE FOR*/
+
+
+ public static double maisQuente(double[][] temperaturas){
+
+    double maior = temperaturas[0][0];
+    double valores = maior;
+
+
+    for(int Q = 0; Q < temperaturas.length ; Q++ ){
+    
+        if (temperaturas[Q][0] < maior){
+
+            maior = temperaturas[Q][0];
+        }
+
+    }
+
+return valores;
+
+ }
+
+
+
 
 // CALCULO MEDIA SIMPLES,
 
@@ -143,7 +166,7 @@ System.out.println("------------------------------------------------------------
 System.out.println("-------------------------------------ESTATISTICA GERAIS------------------------------------");
 System.out.println("-------------------------------------------------------------------------------------------");
 System.out.println("TEMPERATURA MEDIA GERAL: " + temperaturaMediaGeral(temperaturas));
-System.out.println("CIDADE MAIS QUENTE: " + cidades[4]);
+System.out.println("CIDADE MAIS QUENTE: " + maisQuente(temperaturas));
 System.out.println("CIDADE MAIS FRIA: ");
 System.out.println("MAIOR AMPLITUDE: ");
 System.out.println("INDICE DE CALOR MAIS ALTO: ");
