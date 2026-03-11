@@ -144,6 +144,7 @@ return menor;
             
 public static void main(String[] args){
 
+    
     String[] cidades = {"Cidade-1", "Cidade-2", "Cidade-3", "Cidade-4", "Cidade-5"};
 
     double[][] temperaturas = {
@@ -166,8 +167,7 @@ public static void main(String[] args){
    
 
 
-
-  
+   
 
 
 
@@ -188,7 +188,7 @@ System.out.println("TEMPERATURA MEDIA GERAL: " + temperaturaMediaGeral(temperatu
 System.out.println("CIDADE MAIS QUENTE: " + maisQuente(temperaturas));
 System.out.println("CIDADE MAIS FRIA: " + maisfria(temperaturas));
 System.out.println("MAIOR AMPLITUDE: " + String.format("%.2f", maiorAmplitude(temperaturas)));
-System.out.println("INDICE DE CALOR MAIS ALTO: ");
+System.out.println("INDICE DE CALOR MAIS ALTO: " );
 
 
 
