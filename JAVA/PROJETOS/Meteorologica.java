@@ -122,7 +122,7 @@ return menor;
     // AMPLITUDE DE TEMPERATURA
     
         
-    public static double calcularMaiorAmplitude(double[][] temperaturas) {
+    public static double maiorAmplitude(double[][] temperaturas) {
 
         double maiorAmplitude = 0;
 
@@ -187,7 +187,7 @@ System.out.println("------------------------------------------------------------
 System.out.println("TEMPERATURA MEDIA GERAL: " + temperaturaMediaGeral(temperaturas));
 System.out.println("CIDADE MAIS QUENTE: " + maisQuente(temperaturas));
 System.out.println("CIDADE MAIS FRIA: " + maisfria(temperaturas));
-System.out.println("MAIOR AMPLITUDE: ");
+System.out.println("MAIOR AMPLITUDE: " + String.format("%.2f", maiorAmplitude(temperaturas)));
 System.out.println("INDICE DE CALOR MAIS ALTO: ");
 
 
