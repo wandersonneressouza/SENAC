@@ -113,8 +113,9 @@ return menor;
         
         if(temperatura > 30 || umidade > 90){
             return "VERMELHO";
-        }else if(temperatura > 30 && temperatura < 35 || umidade > 80)
+        }else if(temperatura > 30 && temperatura < 35 || umidade > 80){
             return "AMARELO";
+        }
         return "VERDE";
     }
         
@@ -172,7 +173,7 @@ public static void main(String[] args){
 
 
 System.out.println("-------------------------------------------------------------------------------------------");
-System.err.println(" ---------------------- SISTEMA DE ANALISE METEOROLIGICO INTELIGENTE ----------------------");
+System.out.println(" ---------------------- SISTEMA DE ANALISE METEOROLIGICO INTELIGENTE ----------------------");
 System.out.println("-------------------------------------------------------------------------------------------");
 System.out.println("-------------------------------------ANALISE DETALHADA-------------------------------------");
 System.out.println("CIDADES,    TEMP MAX,    TEMP MIN,    TEMP MED,    UMIDADE,   CLASSIFICAÇÃO,         ALERTA, ");
