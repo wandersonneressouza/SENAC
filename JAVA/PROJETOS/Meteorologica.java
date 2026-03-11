@@ -44,21 +44,40 @@ PARA ISSO, VAMOS DE FOR*/
  public static double maisQuente(double[][] temperaturas){
 
     double maior = temperaturas[0][0];
-    double valores = maior;
-
+   
 
     for(int Q = 0; Q < temperaturas.length ; Q++ ){
     
-        if (temperaturas[Q][0] < maior){
+        if (temperaturas[Q][0] > maior){
 
             maior = temperaturas[Q][0];
         }
 
     }
 
-return valores;
+return maior;
 
  }
+
+  public static double maisfria(double[][] temperaturas){
+
+    double menor = temperaturas[0][1];
+   
+    for(int Q = 0; Q < temperaturas.length ; Q++ ){
+    
+        if (temperaturas[Q][1] < menor){
+
+            menor = temperaturas[Q][1];
+        }
+
+    }
+
+return menor;
+
+ }
+
+
+
 
 
 
@@ -167,7 +186,7 @@ System.out.println("-------------------------------------ESTATISTICA GERAIS-----
 System.out.println("-------------------------------------------------------------------------------------------");
 System.out.println("TEMPERATURA MEDIA GERAL: " + temperaturaMediaGeral(temperaturas));
 System.out.println("CIDADE MAIS QUENTE: " + maisQuente(temperaturas));
-System.out.println("CIDADE MAIS FRIA: ");
+System.out.println("CIDADE MAIS FRIA: " + maisfria(temperaturas));
 System.out.println("MAIOR AMPLITUDE: ");
 System.out.println("INDICE DE CALOR MAIS ALTO: ");
 
