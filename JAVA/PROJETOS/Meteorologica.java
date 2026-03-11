@@ -118,7 +118,18 @@ return menor;
         }
         return "VERDE";
     }
-        
+    // VALIDA CODIGO
+
+    public static double validaTemps(double[][] temperaturas){
+            double valida = 0;
+
+            if(valida < -50 || valida > 60){
+                System.err.println("ALGO DE ERRADO NAO TA CERTO");
+            }
+            return valida;
+
+    }
+
 
     // AMPLITUDE DE TEMPERATURA
     
@@ -149,7 +160,9 @@ public static void main(String[] args){
     String[] cidades = {"Cidade-1", "Cidade-2", "Cidade-3", "Cidade-4", "Cidade-5"};
 
     double[][] temperaturas = {
-        {32.5, 22.1},  // Cidade 1
+        //{80.5, 22.1},  // Cidade 1
+        {32.5, -50},  // Cidade 1
+        //{32.5, 22.1},  // Cidade 1
         {28.3, 18.7},  // Cidade 2
         {35.8, 24.9},  // Cidade 3
         {30.2, 20.5},  // Cidade 4
@@ -169,7 +182,6 @@ public static void main(String[] args){
 
 
    
-
 
 
 System.out.println("-------------------------------------------------------------------------------------------");
