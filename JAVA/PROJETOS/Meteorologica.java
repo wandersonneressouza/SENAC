@@ -118,6 +118,9 @@ public static void main(String[] args){
         {75, 50, 68}   // Cidade 5
     };
 
+   
+    //static String[] cidades = {"cidade-1", "cidade-2", "cidade-3", "cidade-4", "cidade-5"};
+
 
 
   
@@ -142,6 +145,9 @@ System.out.println("CIDADE MAIS QUENTE: ");
 System.out.println("CIDADE MAIS FRIA: ");
 System.out.println("MAIOR AMPLITUDE: ");
 System.out.println("INDICE DE CALOR MAIS ALTO: ");
+
+
+
 
 
 
